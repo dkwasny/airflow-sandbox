@@ -7,7 +7,7 @@ from datetime import datetime
 
 def create_dag(dag_id, value):
 	def run_print_var():
-		if value == 5:
+		if value == 4:
 			return "kwas_print_var"
 		elif value == 3:
 			return "go_fail"
@@ -68,6 +68,6 @@ def create_dag(dag_id, value):
 
 	return dag
 
-for n in range(1,10):
+for n in range(1,5):
 	dag_id="kwas_%s" % (n)
 	globals()[dag_id] = create_dag(dag_id, n)
